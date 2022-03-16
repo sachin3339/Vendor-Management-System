@@ -11,15 +11,27 @@ const Login=()=>{
     const btnstyle={margin:'8px 0'}
 
 
-    const {userName , setUserName} = useState('')
-    const {password , setPassword} = useState('')
+    const [userName , setUserName] = useState('')
+    const [password , setPassword] = useState('')
 
-    // const userNameHandler =  (e) = {
+//      const userNameHandler =  (event) = {
+//         setUserName(event.target.value)
+//         console.log(userName)
+//      }
+//  const pssWordHandler = ( event) = {
+//     setPassword(event.target.value)
+//     console.log(password)
+//     }
 
-    // }
-    // const pssWordHandler = ( e) = {
-        
-    // }
+    function userNameHandler(event){
+       
+        setUserName(event.target.value)
+        console.log(userName)
+    }
+    function pssWordHandler(event){
+        setPassword(event.target.value)
+        console.log(password)
+    }
     return(
         <Grid>
             <Paper elevation={10} style={paperStyle}>
@@ -27,8 +39,14 @@ const Login=()=>{
                      <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
                     <h2>Sign In</h2>
                 </Grid>
-                <TextField label='Username' placeholder='Enter username' fullWidth required onChang/>
-                <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
+                <TextField label='Username'
+                 placeholder='Enter username'
+                 onChange={userNameHandler}
+                  fullWidth required />
+                <TextField label='Password'
+                 placeholder='Enter password'
+                  type='password'
+                  onChange={pssWordHandler} fullWidth required/>
                 <FormControlLabel
                     control={
                     <Checkbox
@@ -45,7 +63,7 @@ const Login=()=>{
                 </Link>
                 </Typography>
                 <Typography > Do you have an account ?
-                     <Link href="#" >
+                     <Link href="/signup" >
                         Sign Up 
                 </Link>
                 </Typography>
