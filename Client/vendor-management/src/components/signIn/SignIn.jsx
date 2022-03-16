@@ -11,15 +11,14 @@ const Login=()=>{
     const btnstyle={margin:'8px 0'}
 
 
-    const {userName , setUserName} = useState('')
-    const {password , setPassword} = useState('')
+    const [userName , setUserName] = useState('')
+    const [password , setPassword] = useState('')
 
-    // const userNameHandler =  (e) = {
+    function handleChange(event){
+        console.log(event.target.value)
+    }
 
-    // }
-    // const pssWordHandler = ( e) = {
-        
-    // }
+    
     return(
         <Grid>
             <Paper elevation={10} style={paperStyle}>
@@ -27,7 +26,7 @@ const Login=()=>{
                      <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
                     <h2>Sign In</h2>
                 </Grid>
-                <TextField label='Username' placeholder='Enter username' fullWidth required onChang/>
+                <TextField label='Username' placeholder='Enter username' fullWidth required onChange={handleChange}/>
                 <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
                 <FormControlLabel
                     control={
@@ -45,7 +44,7 @@ const Login=()=>{
                 </Link>
                 </Typography>
                 <Typography > Do you have an account ?
-                     <Link href="#" >
+                     <Link href="/Signup" >
                         Sign Up 
                 </Link>
                 </Typography>
