@@ -63,7 +63,7 @@ const Login=()=>{
                 </Link>
                 </Typography>
                 <Typography > Do you have an account ?
-                     <Link href="#" >
+                     <Link href="/signup" >
                         Sign Up 
                 </Link>
                 </Typography>
